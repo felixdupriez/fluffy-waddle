@@ -49,7 +49,7 @@ class FelixdupriezPlayer extends Player
         if (in_array($oppName, $delegues))
             return parent::foeChoice();
         if ($this->result->getNbRound() == 0)
-            return parent::foeChoice();
+            return parent::friendChoice();
         $friend = 0;
         $foe = 0;
         if ($this->result->getLastChoiceFor($this->opponentSide) == 'friend') {
