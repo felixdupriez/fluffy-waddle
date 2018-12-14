@@ -40,14 +40,11 @@ class FelixdupriezPlayer extends Player
         // -------------------------------------    -----------------------------------------------------
         // How can i display the result of each round ? $this->prettyDisplay()
         // -------------------------------------    -----------------------------------------------------
-        if ($this->result->getLastChoiceFor($this->opponentSide) == 'friend' && $this->result->getLastScoreFor($this->opponentSide) < $this->result->getLastScoreFor($this->mySide))
-            return parent::friendChoice();
-        elseif ($this->result->getLastChoiceFor($this->opponentSide) == 'foe' && $this->result->getLastScoreFor($this->opponentSide) < $this->result->getLastScoreFor($this->mySide))
+        //$this->prettyDisplay();
+        if ($this->result->getNbRound() == 0)
             return parent::foeChoice();
-        elseif ($this->result->getLastChoiceFor($this->opponentSide) == 'friend' && $this->result->getLastScoreFor($this->opponentSide) >= $this->result->getLastScoreFor($this->mySide))
+        elseif ($this->result->getLastChoiceFor($this->opponentSide) == 'friend' && $this->result->getLastScoreFor($this->opponentSide) < $this->result->getLastScoreFor($this->mySide))
             return parent::foeChoice();
-        elseif ($this->result->getLastChoiceFor($this->opponentSide) == 'foe' && $this->result->getLastScoreFor($this->opponentSide) >= $this->result->getLastScoreFor($this->mySide))
-            return parent::friendChoice();
         else
             return parent::foeChoice();
     }
