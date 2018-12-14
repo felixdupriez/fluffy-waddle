@@ -58,10 +58,8 @@ class FelixdupriezPlayer extends Player
                 else
                     $foe += 1;
             }
-            if ($friend >= $foe)
+            if ($friend > $foe)
                 return parent::friendChoice();
-            else
-                return parent::foeChoice();
         }
         else
             return parent::foeChoice();
