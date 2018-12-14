@@ -42,12 +42,12 @@ class FelixdupriezPlayer extends Player
         // -------------------------------------    -----------------------------------------------------
 
         $dream_team = array('Etienneelg', 'Shiinsekai', 'GHope', 'PacoTheGreat', 'Christaupher', 'Benli06');
-        $delegues = array('Akatsuki95', 'Vegan60');
+        //$delegues = array('Akatsuki95', 'Vegan60');
         $oppName = $this->result->getStatsFor($this->opponentSide)['name'];
         if (in_array($oppName, $dream_team))
             return parent::friendChoice();
-        if (in_array($oppName, $delegues))
-            return parent::foeChoice();
+        /*if (in_array($oppName, $delegues))
+            return parent::foeChoice();*/
 
         if ($this->result->getNbRound() == 0)
             return parent::foeChoice();
