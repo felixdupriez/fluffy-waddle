@@ -41,14 +41,13 @@ class FelixdupriezPlayer extends Player
         // How can i display the result of each round ? $this->prettyDisplay()
         // -------------------------------------    -----------------------------------------------------
 
-        $dream_team = array('Etienneelg', 'Shiinsekai', 'GHope', 'PacoTheGreat', 'Christaupher', 'Benli06');
-        //$delegues = array('Akatsuki95', 'Vegan60');
+        $dream_team = array('Etienneelg', 'Shiinsekai', 'GHope', 'PacoTheGreat', 'Christaupher', 'Benli06', 'Galtar95');
+        $delegues = array('Akatsuki95', 'Vegan60');
         $oppName = $this->result->getStatsFor($this->opponentSide)['name'];
         if (in_array($oppName, $dream_team))
             return parent::friendChoice();
-        /*if (in_array($oppName, $delegues))
-            return parent::foeChoice();*/
-
+        if (in_array($oppName, $delegues))
+            return parent::foeChoice();
         if ($this->result->getNbRound() == 0)
             return parent::foeChoice();
         $friend = 0;
@@ -65,5 +64,6 @@ class FelixdupriezPlayer extends Player
         }
         else
             return parent::foeChoice();
+        return parent::foeChoice();
     }
 };
